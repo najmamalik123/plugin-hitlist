@@ -1292,9 +1292,18 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
     <div class="social-card">
         <h4>Deel je stemlijst:</h4>
         <div class="share-links">
-            <a id="share-facebook" class="fb" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a id="share-twitter" class="tw" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a id="share-whatsapp" class="wa" href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a id="share-facebook" class="fb" href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank">
+  <i class="fab fa-facebook-f"></i>
+</a>
+
+<a id="share-twitter" class="tw" href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=Check%20this%20out!" target="_blank">
+  <i class="fab fa-twitter"></i>
+</a>
+
+<a id="share-whatsapp" class="wa" href="https://api.whatsapp.com/send?text=Check%20this%20out!%20https://yourwebsite.com" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
             <a id="share-instagram" class="ig" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
