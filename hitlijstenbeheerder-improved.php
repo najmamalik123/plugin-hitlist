@@ -2311,7 +2311,7 @@ public function top500_shortcode() {
 
     <style>
     .top500-container {
-        font-family:  sans-serif;
+        font-family: 'Segoe UI', sans-serif;
         max-width: 1200px;
         margin: auto;
         padding: 20px;
@@ -2345,7 +2345,7 @@ public function top500_shortcode() {
         font-size: 14px;
         font-weight: 500;
         color: black;
-        font-family: 'Manrope', Helvetica, Arial, Lucida, sans-serif;
+        font-family: 'Segoe UI', sans-serif;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
