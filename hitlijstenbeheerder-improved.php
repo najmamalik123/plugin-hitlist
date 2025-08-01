@@ -301,32 +301,39 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
     // Keep existing CSV import functionality
     public function csv_import_page() {
         global $wpdb;
+    
         if (isset($_POST['upload_csv']) && !empty($_FILES['csv_file']['tmp_name'])) {
             $file = $_FILES['csv_file']['tmp_name'];
-            $handle = fopen($file, 'r');
-            fgetcsv($handle, 0, ';'); // Skip header
-            $imported = 0;
-            $ranking = 1;
-
-            while (($data = fgetcsv($handle, 0, ';')) !== false) {
-                if (count($data) < 3) continue;
-                $artist = sanitize_text_field(trim($data[0]));
-                $song = sanitize_text_field(trim($data[1]));
-                $year = intval(trim($data[2]));
-
-                if ($artist && $song && $year > 0) {
-                    $wpdb->insert($this->hitlists_table, [
-                        'artist_name' => $artist,
-                        'song_title' => $song,
-                        'year' => $year,
-                        'ranking' => $ranking,
-                    ]);
-                    $ranking++;
-                    $imported++;
+            $selected_year = isset($_POST['import_year']) ? intval($_POST['import_year']) : 0;
+    
+            if ($selected_year <= 0) {
+                echo '<div class="notice notice-error"><p>Selecteer een geldig jaar.</p></div>';
+            } else {
+                $handle = fopen($file, 'r');
+                fgetcsv($handle, 0, ';'); // Skip header
+                $imported = 0;
+                $ranking = 1;
+    
+                while (($data = fgetcsv($handle, 0, ';')) !== false) {
+                    if (count($data) < 3) continue;
+    
+                    $artist = sanitize_text_field(trim($data[1])); // column 1: artist
+                    $song = sanitize_text_field(trim($data[2]));   // column 2: song
+    
+                    if ($artist && $song) {
+                        $wpdb->insert($this->hitlists_table, [
+                            'artist_name' => $artist,
+                            'song_title' => $song,
+                            'year' => $selected_year,
+                            'ranking' => $ranking,
+                        ]);
+                        $ranking++;
+                        $imported++;
+                    }
                 }
+                fclose($handle);
+                echo '<div class="notice notice-success"><p>' . $imported . ' records succesvol geïmporteerd voor jaar ' . $selected_year . '.</p></div>';
             }
-            fclose($handle);
-            echo '<div class="notice notice-success"><p>' . $imported . ' records succesvol geïmporteerd.</p></div>';
         }
         ?>
         <div class="wrap">
@@ -337,14 +344,25 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
                     <input type="file" name="csv_file" id="csv_file" accept=".csv" required>
                 </p>
                 <p>
+                    <label for="import_year">Selecteer jaar:</label><br>
+                    <select name="import_year" id="import_year" required>
+                        <?php
+                        $current_year = date('Y');
+                        for ($year = $current_year; $year >= 2000; $year--) {
+                            echo "<option value=\"$year\">$year</option>";
+                        }
+                        ?>
+                    </select>
+                </p>
+                <p>
                     <input type="submit" name="upload_csv" class="button button-primary" value="Uploaden">
                 </p>
             </form>
-            <p>CSV-indeling: Artiest;Titel;Jaar</p>
+            <p>CSV-indeling: NR;Artiest;Titel (jaar wordt hierboven geselecteerd)</p>
         </div>
         <?php
     }
-
+    
     // Keep existing export functionality
     public function export_votes_page() {
         global $wpdb;
