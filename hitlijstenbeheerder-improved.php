@@ -1357,6 +1357,7 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
 
     .song-item input {
         margin-right: 10px;
+        text-color:black;
     }
 
     #pagination-container {
@@ -2335,6 +2336,12 @@ public function top500_shortcode() {
         padding: 20px;
     }
 
+    .song-item span {
+    font-size: 14px; /* Smaller text size */
+    color: black; /* Black text color */
+    font-family: 'Manrope', Helvetica, Arial, Lucida, sans-serif;
+}
+
     .top500-title {
         font-size: 24px;
         color: #009fe3;
@@ -2361,6 +2368,7 @@ public function top500_shortcode() {
     .top500-card:hover {
         transform: translateY(-4px);
     }
+
 
     .song-title {
         font-size: 16px;

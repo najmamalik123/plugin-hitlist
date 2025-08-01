@@ -432,13 +432,13 @@ input[type="button"]:hover {
 .song-title {
   font-weight: bold;
   font-size: 18px;
-  color: #333;
+  color: #1c1b1b;
 }
 
 .artist-name {
-  font-size: 16px;
+  font-size: 14px;
   margin: 5px 0;
-  color: #666;
+  color: #0e0e0e;
 }
 
 .year-badge {
