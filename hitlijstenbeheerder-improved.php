@@ -1324,11 +1324,12 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
         padding: 20px;
     }
     .song-item span {
-    font-size: 14px;
-    color: black;
-    font-family: 'Manrope', Helvetica, Arial, Lucida, sans-serif;
-
-}    
+  font-size: 16px;
+  color: black;
+  font-family: 'Manrope', Helvetica, Arial, Lucida, sans-serif;
+  font-weight: 600;
+}
+ 
 #final-vote-list {
   list-style-type: decimal;
   list-style-position: outside;
@@ -1536,12 +1537,13 @@ button:disabled {
 #thank-you h3 {
     font-size: 24px;
     margin-bottom: 10px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 #thank-you p {
     font-size: 16px;
     margin-bottom: 20px;
+    font-weight: 600;
 }
 
 #thank-you ul {
