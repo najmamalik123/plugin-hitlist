@@ -1343,6 +1343,7 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
         border: 2px solid #eee;
         border-radius: 6px;
         margin-bottom: 10px;
+        
         background-color:#ffffff;
         padding:20px;
         cursor: pointer;
@@ -1606,7 +1607,7 @@ button:disabled {
     }
 
     h1, h2, h3, h4, h5, h6 {
-    color: #333;
+    color: #009fe3;
     padding-bottom: 20px;
     padding-top: 40px;
     line-height: 1em;
@@ -2305,7 +2306,7 @@ public function top500_shortcode() {
     ?>
 
     <div class="top500-container">
-        <h3 class="top500-title">Top 500 uit <?php echo esc_html($previous_year); ?></h3>
+        
         <div class="top500-grid">
             <?php foreach ($results as $song): ?>
                 <div class="top500-card">
