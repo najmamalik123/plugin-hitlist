@@ -1281,7 +1281,7 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
     
             <div id="confirmation-section" style="display:none;">
                 <h3>Hier is de lijst van nummers die je hebt geselecteerd om op te stemmen</h3>
-                <ul id="selected-songs-list"></ul>
+                <ol id="selected-songs-list"></ol>
                 <button type="button" id="submit-vote-btn">Dien je keuzes in en ga verder.</button>
             </div>
     
@@ -1311,8 +1311,8 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
     </div>
 </div>
             <div class="top-500-section">
-                <h3>Top 500 uit <?php echo $previous_year; ?></h3>
-                <div id="top-500-list"><?php echo do_shortcode('[indie500_top500]'); ?></div>
+            <h3 class="top500-heading">Top 500 uit <?php echo $previous_year; ?></h3>
+            <div id="top-500-list"><?php echo do_shortcode('[indie500_top500]'); ?></div>
             </div>
     
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -1323,6 +1323,11 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
         margin: auto;
         padding: 20px;
     }
+    .top500-heading {
+    margin-left: 20px;
+}
+
+
     .song-item span {
   font-size: 16px;
   color: black;
@@ -1340,6 +1345,14 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 1em;
+}
+
+#selected-songs-list {
+    list-style-type: decimal;
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
 }
 
 
@@ -1546,10 +1559,18 @@ button:disabled {
     font-weight: 600;
 }
 
+#thank-you ol,
 #thank-you ul {
-    list-style-type: none;
-    padding-left: 0;
+    list-style-type: decimal;
+    list-style-position: outside;
+    padding-left: 1.5em;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    font-family: 'Manrope', Helvetica, Arial, Lucida, sans-serif;
+    margin-bottom: 1em;
 }
+
 
 #thank-you:hover {
     transform: translateY(-4px); /* Hover effect: lift the card */
@@ -2382,8 +2403,8 @@ public function top500_shortcode() {
     
 
     .song-line {
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 16px;
+        font-weight: 600;
         color: black;
         font-family: 'Manrope', Helvetica, Arial, Lucida, sans-serif;
         white-space: nowrap;
