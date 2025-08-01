@@ -1309,6 +1309,14 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
         margin: auto;
         padding: 20px;
     }
+    .song-item span {
+    font-size: 14px;
+    color: black;
+    font-family: 'Segoe UI', sans-serif;
+
+}    
+
+
     .title {
         font-size: 28px;
         color:rgb(251, 254, 255);
@@ -1335,6 +1343,9 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
         border: 1px solid #ccc;
         border-radius: 6px;
     }
+
+
+
 
     .song-item {
         display: flex;
