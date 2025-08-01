@@ -896,8 +896,8 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
     
         <style>
         .hitlists-plugin {
-          font-family: 'Segoe UI', sans-serif;
-          max-width: 1200px;
+            font-family: 'Manrope', Helvetica, Arial, Lucida, sans-serif;
+            max-width: 1200px;
           margin: auto;
           padding: 20px;
         }
@@ -1318,7 +1318,7 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
             <style>
     .indie500-voting-wrapper {
-        font-family: "Segoe UI", sans-serif;
+        font-family: 'Manrope', Helvetica, Arial, Lucida, sans-serif;
         max-width: 960px;
         margin: auto;
         padding: 20px;
@@ -1326,9 +1326,21 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
     .song-item span {
     font-size: 14px;
     color: black;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Manrope', Helvetica, Arial, Lucida, sans-serif;
 
 }    
+#final-vote-list {
+  list-style-type: decimal;
+  list-style-position: outside;
+  padding-left: 1.5em;
+  color: #000; /* black text */
+  font-family: 'Manrope', Helvetica, Arial, Lucida, sans-serif;
+
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
 
 
     .title {
@@ -1441,7 +1453,7 @@ button {
     font-weight: 500;
     font-stretch: normal;
     font-size: 14px; /* Font size remains the same */
-    font-family: 'Segoe UI', sans-serif; /* Custom font family */
+    font-family: 'Manrope', Helvetica, Arial, Lucida, sans-serif;
     font-optical-sizing: auto;
     font-size-adjust: auto;
     font-kerning: normal;
@@ -2336,7 +2348,8 @@ public function top500_shortcode() {
 
     <style>
     .top500-container {
-        font-family: 'Segoe UI', sans-serif;
+        font-family: 'Manrope', Helvetica, Arial, Lucida, sans-serif;
+
         max-width: 1200px;
         margin: auto;
         padding: 20px;
@@ -2370,7 +2383,7 @@ public function top500_shortcode() {
         font-size: 14px;
         font-weight: 500;
         color: black;
-        font-family: 'Segoe UI', sans-serif;
+        font-family: 'Manrope', Helvetica, Arial, Lucida, sans-serif;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
