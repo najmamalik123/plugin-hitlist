@@ -1137,7 +1137,10 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
         html += `
           <div class="hitlists-result-card fade-in" style="animation-delay: ${i * 0.07}s">
             <div class="hitlists-card-row">
-              <span class="song-title">${i + 1}. ${escapeHtml(item.artist_name)} - ${escapeHtml(item.song_title)}</span>
+              
+
+                <span class="song-title">${i + 1}. ${escapeHtml(item.song_title)} - ${escapeHtml(item.artist_name)}</span>
+
               <span class="year-badge">${item.year}</span>
             </div>
           </div>
