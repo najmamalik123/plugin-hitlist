@@ -1032,7 +1032,9 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
   font-size: 28px;
   margin-bottom: 10px;
   font-weight: 700;
+  color: #fff;
 }
+
 
 .hitlists-top-card p {
   font-size: 16px;
@@ -1631,7 +1633,7 @@ button:disabled {
     }
 
     h1, h2, h3, h4, h5, h6 {
-    color: #009fe3;
+    color: #1c1367;
     padding-bottom: 20px;
     padding-top: 40px;
     line-height: 1em;
