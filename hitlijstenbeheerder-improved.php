@@ -2276,82 +2276,53 @@ public function top500_shortcode() {
 
     $current_year = date('Y');
     $previous_year = $current_year - 1;
-    $per_page = 50;  // Number of results per page
-    $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-    $offset = ($page - 1) * $per_page;
 
-    // Query to fetch results with pagination
+    // Get all songs without pagination
     $results = $wpdb->get_results(
         $wpdb->prepare("
             SELECT artist_name, song_title
             FROM {$this->hitlists_table}
             WHERE year = %d
             ORDER BY id ASC
-            LIMIT %d OFFSET %d
-        ", $previous_year, $per_page, $offset)
+        ", $previous_year)
     );
-
-    // Count total results for pagination
-    $total_results = $wpdb->get_var($wpdb->prepare("
-        SELECT COUNT(*) FROM {$this->hitlists_table}
-        WHERE year = %d
-    ", $previous_year));
 
     if (!$results) {
         return '<p>Er zijn nog geen top 500 nummers beschikbaar voor dit jaar.</p>';
     }
 
-    $total_pages = ceil($total_results / $per_page);
-
     ob_start();
     ?>
 
     <div class="top500-container">
-        
         <div class="top500-grid">
-            <?php foreach ($results as $song): ?>
+            <?php 
+            $counter = 1;
+            foreach ($results as $song): ?>
                 <div class="top500-card">
-                    <span class="song-title"><?php echo esc_html($song->song_title); ?></span><br>
-                    <span class="artist-name"><?php echo esc_html($song->artist_name); ?></span>
+                <span class="song-line"><?php echo $counter . '. ' . esc_html($song->song_title) . ' - ' . esc_html($song->artist_name); ?></span>
+
                 </div>
-            <?php endforeach; ?>
-        </div>
-
-        <div class="pagination">
-            <?php if ($page > 1): ?>
-                <a href="?page=<?php echo $page - 1; ?>" class="pagination-btn">Vorige</a>
-            <?php endif; ?>
-
-            <?php if ($page < $total_pages): ?>
-                <a href="?page=<?php echo $page + 1; ?>" class="pagination-btn">Volgende</a>
-            <?php endif; ?>
+            <?php 
+            $counter++;
+            endforeach; ?>
         </div>
     </div>
 
     <style>
     .top500-container {
-        font-family: 'Segoe UI', sans-serif;
+        font-family:  sans-serif;
         max-width: 1200px;
         margin: auto;
         padding: 20px;
-    }
-
-    .song-item span {
-    font-size: 14px; /* Smaller text size */
-    color: black; /* Black text color */
-    font-family: 'Manrope', Helvetica, Arial, Lucida, sans-serif;
-}
-
-    .top500-title {
-        font-size: 24px;
-        color: #009fe3;
-        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 600;
     }
 
     .top500-grid {
         display: grid;
         grid-template-columns: repeat(1, 1fr); /* 1 card per row */
-        gap: 20px;
+         gap: 20px;
         margin-top: 20px;
     }
 
@@ -2362,77 +2333,44 @@ public function top500_shortcode() {
         padding: 10px;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
         transition: transform 0.2s ease;
-        text-align: center;
+        text-align: left;
     }
 
     .top500-card:hover {
         transform: translateY(-4px);
     }
+    
 
-
-    .song-title {
-        font-size: 16px;
-        font-weight: 600;
-        color: #222;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    .artist-name {
-        font-size: 15px;
-        color: #555;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 30px;
-    }
-
-    .pagination-btn {
-        padding: 10px 20px;
+    .song-line {
         font-size: 14px;
         font-weight: 500;
-        border: none;
-        background-color: #009fe3;
-        color: white;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .pagination-btn:disabled {
-        background-color: #ccc;
-        cursor: not-allowed;
-    }
-
-    .pagination-btn:hover:not(:disabled) {
-        background-color: #007bb5;
+        color: black;
+        font-family: 'Manrope', Helvetica, Arial, Lucida, sans-serif;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        width: 100%;
     }
 
     @media screen and (max-width: 600px) {
         .top500-grid {
-            grid-template-columns: 1fr; /* 1 card per row on mobile */
+            grid-template-columns: 1fr;
         }
 
-        .song-title, .artist-name {
+        .song-line {
             font-size: 14px;
         }
     }
-</style>
-
-
-
+    </style>
 
     <?php
     return ob_get_clean();
 }
 
+
+
+ 
 
 
     // Enqueue frontend assets
