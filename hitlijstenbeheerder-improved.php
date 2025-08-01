@@ -1139,7 +1139,7 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
             <div class="hitlists-card-row">
               
 
-                <span class="song-title">${i + 1}. ${escapeHtml(item.song_title)} - ${escapeHtml(item.artist_name)}</span>
+<span class="song-title">${start + i + 1}. ${escapeHtml(item.song_title)} - ${escapeHtml(item.artist_name)}</span>
 
               <span class="year-badge">${item.year}</span>
             </div>
@@ -1284,9 +1284,9 @@ add_shortcode('indie500_top500', [$this, 'top500_shortcode']);
             </div>
     
             <div id="thank-you" style="display:none;">
-    <h3>Thank you for voting!</h3>
-    <p>Please wait a moment while we finalize the list of the highest-rated votes. The results will be updated shortly.</p>
-    <ul id="final-vote-list"></ul>
+            <h3>Bedankt voor het stemmen!</h3>
+    <p>Wacht een moment terwijl we de lijst van de hoogst-gemiddelde stemmen finaliseren. De resultaten worden binnenkort bijgewerkt</p>
+ <ol id="final-vote-list"></ol>
 </div>
     <!-- New Card Container for Social Links -->
     <div class="social-card">
@@ -1666,7 +1666,7 @@ button:disabled {
                         if (e.target.checked) {
                             if (selectedIds.length >= 10) {
                                 e.target.checked = false;
-                                alert("Maximaal 10 nummers toegestaan.");
+                                alert("Je kunt voor maximaal 10 nummers stemmen. Zodra je stem is ingediend, kan deze niet meer worden gewijzigd of bewe");
                             } else {
                                 selectedIds.push(song.id);
                                 item.classList.add('selected');
