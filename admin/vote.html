@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vote for Songs</title>
+  <link rel="stylesheet" href="../frontend/css/style.css">
+  <style>
+    .indie500-vote-container {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: #009fe3;
+      color: #fff;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .indie500-song-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 800px) {
+      .indie500-song-list {
+        grid-template-columns: 1fr;
+      }
+    }
+    .indie500-song-item {
+      display: flex;
+      align-items: center;
+      background: #009fe3;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      padding: 0.75rem 1rem;
+      color: #fff;
+    }
+    .indie500-vote-btn {
+      background: #fff;
+      color: #009fe3;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s, color 0.2s;
+    }
+    .indie500-vote-btn:disabled {
+      background: #b3e0f7;
+      color: #fff;
+      cursor: not-allowed;
+    }
+    .indie500-vote-count {
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="indie500-vote-container">
+    <h2>Vote for Your Favorite Songs</h2>
+    <div class="indie500-vote-count">
+      Selected: <span id="selected-count">0</span> / 10
+    </div>
+    <form id="vote-form">
+      <div class="indie500-song-list" id="song-list">
+        <!-- Songs will be loaded here -->
+      </div>
+      <button type="submit" class="indie500-vote-btn" id="vote-btn" disabled>Submit Votes</button>
+    </form>
+    <div id="vote-message"></div>
+  </div>
+  <script>
+    // Replace with your actual PHP endpoint for fetching songs
+    const songsUrl = 'songs-endpoint.php';
+    // Replace with your actual PHP endpoint for submitting votes
+    const voteUrl = 'vote-endpoint.php';
+
+    let selectedVotes = [];
+
+    // Fetch songs and render checkboxes
+    fetch(songsUrl)
+      .then(response => response.json())
+      .then(data => {
+        const songList = document.getElementById('song-list');
+        if (Array.isArray(data) && data.length > 0) {
+          data.forEach(song => {
+            const id = `${song.title}|${song.artist}|${song.year}`;
+            const div = document.createElement('div');
+            div.className = 'indie500-song-item';
+            div.innerHTML = `
+              <label>
+                <input type="checkbox" value="${id}" class="vote-checkbox"> 
+                ${song.title} - ${song.artist} (${song.year})
+              </label>
+            `;
+            songList.appendChild(div);
+          });
+        } else {
+          songList.innerHTML = '<div>No songs available for voting.</div>';
+        }
+      });
+
+    // Handle vote selection
+    document.addEventListener('change', function(e) {
+      if (e.target.classList.contains('vote-checkbox')) {
+        const checkboxes = document.querySelectorAll('.vote-checkbox');
+        selectedVotes = Array.from(checkboxes).filter(cb => cb.checked).map(cb => cb.value);
+        document.getElementById('selected-count').textContent = selectedVotes.length;
+        document.getElementById('vote-btn').disabled = selectedVotes.length === 0 || selectedVotes.length > 10;
+        // Prevent selecting more than 10
+        if (selectedVotes.length > 10) {
+          e.target.checked = false;
+          selectedVotes.pop();
+          document.getElementById('selected-count').textContent = selectedVotes.length;
+          document.getElementById('vote-btn').disabled = selectedVotes.length === 0 || selectedVotes.length > 10;
+          alert('You can select up to 10 songs only.');
+        }
+      }
+    });
+
+    // Handle form submit
+    document.getElementById('vote-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (selectedVotes.length === 0 || selectedVotes.length > 10) return;
+      fetch(voteUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ votes: selectedVotes })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          document.getElementById('vote-message').textContent = 'Thank you for voting!';
+          document.getElementById('vote-form').reset();
+          document.getElementById('selected-count').textContent = '0';
+          document.getElementById('vote-btn').disabled = true;
+        } else {
+          document.getElementById('vote-message').textContent = data.error || 'Failed to submit votes.';
+        }
+      })
+      .catch(() => {
+        document.getElementById('vote-message').textContent = 'Failed to submit votes.';
+      });
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Songs CSV</title>
+  <link rel="stylesheet" href="../frontend/css/style.css">
+  <style>
+    .indie500-upload-container {
+      max-width: 400px;
+      margin: 2rem auto;
+      background: #009fe3;
+      color: #fff;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      text-align: center;
+    }
+    .indie500-upload-btn {
+      background: #fff;
+      color: #009fe3;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      font-weight: bold;
+      transition: background 0.2s, color 0.2s;
+    }
+    .indie500-upload-btn:hover {
+      background: #007bb5;
+      color: #fff;
+    }
+    input[type="file"] {
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="indie500-upload-container">
+    <h2>Upload Songs CSV</h2>
+    <form id="indie500-upload-form" action="<?php echo admin_url('admin-post.php?action=indie500_upload_csv'); ?>" method="post" enctype="multipart/form-data">
+      <input type="file" name="csv_file" accept=".csv" required>
+      <br>
+      <button type="submit" class="indie500-upload-btn">Upload CSV</button>
+    </form>
+    <div id="upload-message"></div>
+  </div>
+  <script>
+    document.getElementById('indie500-upload-form').addEventListener('submit', function(e) {
+      var fileInput = this.querySelector('input[type="file"]');
+      if (!fileInput.files.length) {
+        e.preventDefault();
+        document.getElementById('upload-message').textContent = 'Please select a CSV file to upload.';
+      }
+    });
+  </script>
+</body>
+</html> 

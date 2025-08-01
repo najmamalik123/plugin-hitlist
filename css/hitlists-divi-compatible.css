@@ -1,0 +1,361 @@
+/* Divi-Compatible Hitlijsten Styles - INDIE 500 Branded - ALL BLUE UPDATED */
+/* Namespace all styles to prevent conflicts with Divi */
+
+/* Container Styles - Divi Compatible */
+.hitlists-plugin .hit-lists-container,
+.hitlists-plugin .hlm-voting-container,
+.hitlists-plugin .hlm-results-container,
+.hitlists-plugin .hlm-registration-container,
+.hitlists-plugin .hlm-account-dashboard,
+.hitlists-plugin .hlm-homepage-stats {
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+  padding: 20px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  box-sizing: border-box !important;
+}
+
+/* Reset Divi styles that might interfere */
+.hitlists-plugin * {
+  box-sizing: border-box !important;
+}
+
+.hitlists-plugin h1,
+.hitlists-plugin h2,
+.hitlists-plugin h3,
+.hitlists-plugin h4,
+.hitlists-plugin h5,
+.hitlists-plugin h6 {
+  font-family: inherit !important;
+  line-height: 1.4 !important;
+  margin: 0 0 15px 0 !important;
+}
+
+/* Header Styles - Beautiful Gradients - UPDATED TO BLUE */
+.hitlists-plugin .hit-lists-header,
+.hitlists-plugin .hlm-voting-header,
+.hitlists-plugin .hlm-results-header,
+.hitlists-plugin .hlm-registration-header,
+.hitlists-plugin .hlm-account-header,
+.hitlists-plugin .hlm-stats-header {
+  text-align: center !important;
+  margin-bottom: 30px !important;
+  padding: 30px 20px !important;
+  background: #009fe3 !important; /* Changed to blue gradient */
+  color: white !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 159, 227, 0.3) !important;
+}
+
+.hitlists-plugin .hit-lists-header h2,
+.hitlists-plugin .hlm-voting-header h2,
+.hitlists-plugin .hlm-results-header h2,
+.hitlists-plugin .hlm-registration-header h2,
+.hitlists-plugin .hlm-account-header h2,
+.hitlists-plugin .hlm-stats-header h2 {
+  margin: 0 0 10px 0 !important;
+  font-size: 2.2rem !important;
+  font-weight: 700 !important;
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.hitlists-plugin .hit-lists-header p,
+.hitlists-plugin .hlm-voting-header p,
+.hitlists-plugin .hlm-results-header p,
+.hitlists-plugin .hlm-registration-header p,
+.hitlists-plugin .hlm-account-header p {
+  margin: 0 !important;
+  opacity: 0.95 !important;
+  font-size: 1.1rem !important;
+  color: white !important;
+}
+
+/* Simple Results Display */
+.hitlists-plugin .hlm-results-simple,
+.hitlists-plugin .hit-lists-results-simple {
+  background: white !important;
+  border-radius: 12px !important;
+  padding: 30px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* UPDATED RESULTS HEADER - CHANGED FROM CYAN TO BLUE */
+.hitlists-plugin .hlm-results-header-text {
+  text-align: center !important;
+  margin-bottom: 30px !important;
+  padding: 20px !important;
+  background: #009fe3 !important; /* Changed to blue gradient */
+  border-radius: 8px !important;
+  border: 2px solid #009fe3 !important; /* Changed from cyan to blue */
+}
+
+/* UPDATED H3 COLOR - CHANGED FROM DARK BLUE TO BLUE */
+.hitlists-plugin .hlm-results-header-text h3 {
+  color: #009fe3 !important; /* Changed from #1e3a8a to #009fe3 */
+  font-size: 1.4rem !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+
+
+
+
+
+
+
+
+.hitlists-plugin .hlm-result-simple-item .artist,
+.hitlists-plugin .hit-lists-result-item .artist {
+  font-weight: 600 !important;
+  color: #374151 !important;
+}
+
+.hitlists-plugin .hlm-result-simple-item .title,
+.hitlists-plugin .hit-lists-result-item .title {
+  color: #6b7280 !important;
+}
+
+.hitlists-plugin .hlm-result-simple-item .votes {
+  color: #009fe3 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+/* Controls Styles */
+.hitlists-plugin .hit-lists-controls,
+.hitlists-plugin .hlm-voting-controls,
+.hitlists-plugin .hlm-results-controls {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 15px !important;
+  align-items: flex-end !important;
+  margin-bottom: 25px !important;
+  padding: 20px !important;
+  background: #009fe3 !important;
+  border-radius: 8px !important;
+  border: 1px solid #e9ecef !important;
+}
+
+.hitlists-plugin .control-group {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  flex: 1 !important;
+  min-width: 150px !important;
+}
+
+.hitlists-plugin .control-group label {
+  font-weight: 600 !important;
+  color: #495057 !important;
+  font-size: 14px !important;
+  margin: 0 !important;
+}
+
+/* Form Elements - ALL FOCUS COLORS CHANGED TO BLUE */
+.hitlists-plugin .hit-lists-controls select,
+.hitlists-plugin .hit-lists-controls input,
+.hitlists-plugin .hlm-voting-controls select,
+.hitlists-plugin .hlm-voting-controls input,
+.hitlists-plugin .hlm-results-controls select {
+  padding: 8px 12px !important;
+  border: 2px solid #dee2e6 !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+  transition: border-color 0.3s ease !important;
+  background: white !important;
+  color: #495057 !important;
+  font-family: inherit !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+.hitlists-plugin .hit-lists-controls select:focus,
+.hitlists-plugin .hit-lists-controls input:focus,
+.hitlists-plugin .hlm-voting-controls select:focus,
+.hitlists-plugin .hlm-voting-controls input:focus {
+  outline: none !important;
+  border-color: #009fe3 !important; /* Already blue */
+  box-shadow: 0 0 0 3px rgba(0, 159, 227, 0.1) !important;
+}
+
+/* ALL BUTTONS - BLUE THEME */
+.hitlists-plugin .hit-lists-reset-btn,
+.hitlists-plugin .hlm-vote-button {
+  background: #009fe3 !important;
+  color: white !important;
+  border: none !important;
+  padding: 12px 24px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  font-family: inherit !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  text-align: center !important;
+  min-width: 120px !important;
+  white-space: nowrap !important;
+}
+
+
+
+.hitlists-plugin .hlm-vote-button:disabled {
+  background: #adb5bd !important;
+  cursor: not-allowed !important;
+  color: white !important;
+}
+
+/* LOGOUT BUTTON - NOW BLUE THEME */
+.hitlists-plugin .hlm-vote-button.hlm-logout {
+  background: #009fe3 !important; /* Changed from red to blue */
+}
+
+.hitlists-plugin .hlm-vote-button.hlm-logout:hover {
+  background: #0088cc !important; /* Blue hover */
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0, 159, 227, 0.3) !important;
+}
+
+/* Email Section */
+.hitlists-plugin .hlm-email-section {
+  margin-bottom: 20px !important;
+  padding: 15px !important;
+  background: #f8f9fa !important;
+  border-radius: 8px !important;
+  border: 1px solid #e9ecef !important;
+}
+
+.hitlists-plugin .hlm-email-section label {
+  display: block !important;
+  font-weight: 600 !important;
+  color: #495057 !important;
+  margin-bottom: 8px !important;
+}
+
+.hitlists-plugin .hlm-email-section input {
+  width: 100% !important;
+  padding: 10px 12px !important;
+  border: 2px solid #dee2e6 !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+  background: white !important;
+  color: #495057 !important;
+  transition: border-color 0.3s ease !important;
+}
+
+/* EMAIL INPUT FOCUS - BLUE */
+.hitlists-plugin .hlm-email-section input:focus {
+  outline: none !important;
+  border-color: #009fe3 !important;
+  box-shadow: 0 0 0 3px rgba(0, 159, 227, 0.1) !important;
+}
+
+/* Registration Form */
+.hitlists-plugin .hlm-registration-form {
+  background: white !important;
+  padding: 30px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.hitlists-plugin .hlm-registration-form .form-group {
+  margin-bottom: 20px !important;
+}
+
+.hitlists-plugin .hlm-registration-form label {
+  display: block !important;
+  font-weight: 600 !important;
+  color: #495057 !important;
+  margin-bottom: 8px !important;
+}
+
+.hitlists-plugin .hlm-registration-form input {
+  width: 100% !important;
+  padding: 12px !important;
+  border: 2px solid #dee2e6 !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+  background: white !important;
+  color: #495057 !important;
+  transition: border-color 0.3s ease !important;
+}
+
+/* REGISTRATION FORM INPUT FOCUS - BLUE */
+.hitlists-plugin .hlm-registration-form input:focus {
+  outline: none !important;
+  border-color: #009fe3 !important;
+  box-shadow: 0 0 0 3px rgba(0, 159, 227, 0.1) !important;
+}
+
+/* Pagination Buttons - ALL BLUE */
+.pagination button {
+  background-color: #009fe3 !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  cursor: pointer !important;
+  font-size: 16px !important;
+  margin: 0 10px !important;
+  border-radius: 5px !important;
+  transition: all 0.3s ease !important;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #009fe3 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0, 159, 227, 0.3) !important;
+}
+
+.pagination button:disabled {
+  background-color: #ccc !important;
+  cursor: not-allowed !important;
+}
+
+/* Additional universal button styles - ALL BLUE */
+.hitlists-plugin button,
+.hitlists-plugin input[type="submit"],
+.hitlists-plugin input[type="button"] {
+  transition: all 0.3s ease !important;
+}
+
+.hitlists-plugin button:hover:not(:disabled),
+.hitlists-plugin input[type="submit"]:hover:not(:disabled),
+.hitlists-plugin input[type="button"]:hover:not(:disabled) {
+  background-color: #009fe3 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0, 159, 227, 0.3) !important;
+}
+
+/* Links and other interactive elements - BLUE */
+.hitlists-plugin a {
+  color: #009fe3 !important;
+  transition: color 0.3s ease !important;
+}
+
+.hitlists-plugin a:hover {
+  color: #0088cc !important;
+}
+
+/* Any remaining purple or dark blue elements */
+.hitlists-plugin .purple,
+.hitlists-plugin .dark-blue,
+.hitlists-plugin [class*="purple"],
+.hitlists-plugin [class*="indigo"],
+.hitlists-plugin [class*="violet"] {
+  color: #009fe3 !important;
+  background-color: transparent !important;
+}
+
+.hitlists-plugin .purple:hover,
+.hitlists-plugin .dark-blue:hover,
+.hitlists-plugin [class*="purple"]:hover,
+.hitlists-plugin [class*="indigo"]:hover,
+.hitlists-plugin [class*="violet"]:hover {
+  color: #009fe3 !important;
+}

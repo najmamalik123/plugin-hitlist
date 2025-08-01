@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voting Results</title>
+  <link rel="stylesheet" href="../frontend/css/style.css">
+  <style>
+    .indie500-results-container {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: #009fe3;
+      color: #fff;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      color: #009fe3;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    th {
+      background: #009fe3;
+      color: #fff;
+    }
+    tr:nth-child(even) td {
+      background: #f0f8ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="indie500-results-container">
+    <h2>Voting Results</h2>
+    <table id="results-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Artist</th>
+          <th>Year</th>
+          <th>Votes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Results will be inserted here -->
+      </tbody>
+    </table>
+    <div id="results-message"></div>
+  </div>
+  <script>
+    // Replace this URL with your actual PHP endpoint for results
+    const resultsUrl = 'results-endpoint.php';
+
+    fetch(resultsUrl)
+      .then(response => response.json())
+      .then(data => {
+        const tbody = document.querySelector('#results-table tbody');
+        if (Array.isArray(data) && data.length > 0) {
+          data.forEach(row => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td>${row.title}</td><td>${row.artist}</td><td>${row.year}</td><td>${row.votes}</td>`;
+            tbody.appendChild(tr);
+          });
+        } else {
+          document.getElementById('results-message').textContent = 'No results found.';
+        }
+      })
+      .catch(() => {
+        document.getElementById('results-message').textContent = 'Failed to fetch results.';
+      });
+  </script>
+</body>
+</html> 

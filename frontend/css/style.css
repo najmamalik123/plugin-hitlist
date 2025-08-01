@@ -1,0 +1,354 @@
+:root {
+  --indie500-primary: #009fe3;
+  --indie500-bg: #fff;
+  --indie500-border: #e0e0e0;
+  --indie500-radius: 8px;
+  --indie500-padding: 1.5rem;
+}
+
+.indie500-voting-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: #009fe3;
+  border-radius: var(--indie500-radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: var(--indie500-padding);
+  display: grid;
+  gap: 1.5rem;
+  color: #fff;
+}
+
+.indie500-songs-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 800px) {
+  .indie500-songs-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.indie500-song-item {
+  display: flex;
+  align-items: center;
+  background: #009fe3;
+  border-radius: var(--indie500-radius);
+  border: 1px solid var(--indie500-border);
+  padding: 0.75rem 1rem;
+  transition: box-shadow 0.2s;
+  color: #fff;
+}
+
+.indie500-song-item:hover,
+.indie500-song-item:focus-within {
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.indie500-vote-checkbox:checked + .indie500-song-info {
+  background: #fff;
+  color: #009fe3;
+  border-radius: var(--indie500-radius);
+}
+
+.indie500-submit-btn {
+  background: #009fe3;
+  color: #fff;
+  border: none;
+  border-radius: var(--indie500-radius);
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.indie500-submit-btn:disabled {
+  background: #009fe3;
+  cursor: not-allowed;
+}
+
+@media (max-width: 500px) {
+  .indie500-voting-container {
+    padding: 0.5rem;
+  }
+  .indie500-song-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+} 
+
+/* --- Hitlist Shortcode Styles --- */
+.hit-lists-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: #009fe3;
+  color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.hit-lists-header h2 {
+  margin-bottom: 0.25rem;
+}
+
+.hit-lists-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+.control-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.control-group input,
+.control-group select,
+.hit-lists-reset-btn {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+}
+
+.hit-lists-reset-btn {
+  background: #fff;
+  color: #009fe3;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.hit-lists-reset-btn:hover {
+  background: #007bb5;
+  color: #fff;
+}
+
+.hit-lists-results-simple {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.hit-lists-result-item {
+  background: #fff;
+  color: #009fe3;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+.hit-lists-result-item.top-10 {
+  background: #ffe600;
+  color: #222;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .hit-lists-container {
+    padding: 1rem;
+  }
+  .hit-lists-controls {
+    grid-template-columns: 1fr;
+  }
+  .hit-lists-result-item {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1rem;
+  }
+} 
+
+/* --- Voting Shortcode Styles --- */
+.hlm-songs-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 700px) {
+  .hlm-songs-container {
+    grid-template-columns: 1fr;
+  }
+}
+.hlm-song-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  color: #009fe3;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  gap: 1rem;
+}
+.hlm-song-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+.hlm-vote-checkbox {
+  margin-right: 0.75rem;
+  accent-color: #009fe3;
+}
+#hlm-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0 0 0;
+}
+#hlm-pagination button {
+  background: #fff;
+  color: #009fe3;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+#hlm-pagination button:disabled {
+  background: #b3e0f7;
+  color: #fff;
+  cursor: not-allowed;
+} 
+
+
+.hitlists-plugin {
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.hitlists-header {
+  background-color: #007BFF;
+  color: white;
+  padding: 40px 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hitlists-header h1 {
+  margin: 0 0 10px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.hitlists-header p {
+  margin: 0;
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+.hitlists-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+  align-items: flex-end;
+}
+
+.hitlists-controls .control-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.hitlists-reset-btn {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 25px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.hitlists-reset-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Grid layout for results */
+.hitlists-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Result cards */
+.hitlists-result-card {
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.hitlists-result-card:hover {
+  transform: translateY(-3px);
+}
+
+.song-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+
+.artist-name {
+  font-size: 16px;
+  margin: 5px 0;
+  color: #666;
+}
+
+.year-badge {
+  background-color: #007BFF;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Pagination */
+.hitlists-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.pagination-btn {
+  padding: 8px 20px;
+  font-size: 14px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  font-weight: bold;
+}
+.hitlists-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}

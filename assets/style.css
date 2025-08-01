@@ -1,0 +1,826 @@
+/* Indie500 Manager Frontend Styles */
+.indie500-vote-container,
+.indie500-archive-container,
+.indie500-results-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.indie500-vote-header,
+.indie500-archive-header,
+.indie500-results-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.indie500-vote-header h2,
+.indie500-archive-header h2,
+.indie500-results-header h2 {
+  color: #009fe3;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.indie500-search-container {
+  margin-bottom: 20px;
+}
+
+.indie500-search-container input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.indie500-search-container input:focus {
+  outline: none;
+  border-color: #009fe3;
+}
+
+.indie500-filter-container {
+  margin-bottom: 20px;
+}
+
+.indie500-filter-container select {
+  padding: 10px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+}
+
+.indie500-vote-counter {
+  background: #f9fafb;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #009fe3;
+}
+
+.indie500-songs-list {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.indie500-song-item {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s;
+}
+
+.indie500-song-item:last-child {
+  border-bottom: none;
+}
+
+.indie500-song-item:hover {
+  background-color: #f9fafb;
+}
+
+.indie500-song-label {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  gap: 12px;
+}
+
+.indie500-vote-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #009fe3;
+}
+
+.indie500-song-info {
+  flex: 1;
+}
+
+.indie500-song-title {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.indie500-song-artist {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.indie500-submit-container {
+  text-align: center;
+}
+
+.indie500-submit-btn {
+  background: #009fe3;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  min-width: 200px;
+}
+
+.indie500-submit-btn:hover:not(:disabled) {
+  background: #f97316;
+}
+
+.indie500-submit-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.indie500-message {
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.indie500-message.indie500-success {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.indie500-message.indie500-error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+/* Archive Styles */
+.indie500-year-selector {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.indie500-year-selector select {
+  padding: 10px 15px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  font-size: 16px;
+  min-width: 150px;
+}
+
+.indie500-archive-list {
+  display: grid;
+  gap: 15px;
+}
+
+.indie500-archive-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  transition: box-shadow 0.2s;
+}
+
+.indie500-archive-item:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Results Styles */
+.indie500-results-list {
+  display: grid;
+  gap: 15px;
+}
+
+.indie500-result-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  transition: box-shadow 0.2s;
+}
+
+.indie500-result-item:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.indie500-result-item.indie500-top-3 {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-color: #f59e0b;
+}
+
+.indie500-result-rank {
+  font-size: 24px;
+  font-weight: bold;
+  color: #009fe3;
+  margin-right: 20px;
+  min-width: 50px;
+}
+
+.indie500-result-info {
+  flex: 1;
+}
+
+.indie500-result-title {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+  font-size: 18px;
+}
+
+.indie500-result-artist {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.indie500-result-votes {
+  text-align: right;
+}
+
+.indie500-vote-count {
+  font-size: 28px;
+  font-weight: bold;
+  color: #009fe3;
+  display: block;
+}
+
+.indie500-vote-label {
+  font-size: 12px;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+/* --- Voting Results Modern Styles --- */
+.indie500-voting-results-section {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  padding: 24px 12px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,159,227,0.07);
+}
+.indie500-voting-results-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.indie500-voting-results-header h2 {
+  color: #009fe3;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.indie500-voting-results-header p {
+  color: #4b5563;
+  font-size: 1rem;
+}
+.indie500-voting-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.indie500-voting-result-row {
+  display: flex;
+  align-items: center;
+  padding: 18px 16px;
+  font-size: 1.08rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+  transition: background 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.indie500-row-even {
+  background: #f9fafb;
+}
+.indie500-row-odd {
+  background: #f3f4f6;
+}
+.indie500-voting-result-row:focus,
+.indie500-voting-result-row:hover {
+  background: #e0f2fe;
+  box-shadow: 0 2px 8px rgba(0,159,227,0.10);
+}
+.indie500-voting-top3 {
+  background: linear-gradient(90deg, #e0f2fe 0%, #fff 100%);
+  border-left: 4px solid #009fe3;
+}
+.indie500-voting-rank {
+  flex: 0 0 60px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.3em;
+  color: #009fe3;
+}
+.indie500-voting-songinfo {
+  flex: 1 1 0%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 1em;
+  color: #222;
+}
+.indie500-voting-title {
+  font-weight: 600;
+  color: #111827;
+  margin-right: 6px;
+}
+.indie500-voting-artist {
+  color: #009fe3;
+  font-weight: 500;
+  margin-right: 6px;
+}
+.indie500-voting-year {
+  color: #6b7280;
+  font-size: 0.98em;
+}
+.indie500-voting-votes {
+  flex: 0 0 80px;
+  text-align: right;
+  font-size: 1.1em;
+  color: #009fe3;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.indie500-voting-vote-count {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.indie500-voting-vote-label {
+  font-size: 0.85em;
+  color: #6b7280;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+@media (max-width: 600px) {
+  .indie500-voting-results-section {
+    padding: 10px 2px;
+  }
+  .indie500-voting-result-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 14px 6px;
+    font-size: 0.98rem;
+  }
+  .indie500-voting-rank, .indie500-voting-votes {
+    text-align: left;
+    align-items: flex-start;
+    font-size: 1.1em;
+  }
+  .indie500-voting-votes {
+    flex-direction: row;
+    gap: 8px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .indie500-vote-container,
+  .indie500-archive-container,
+  .indie500-results-container {
+    padding: 15px;
+  }
+
+  .indie500-result-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .indie500-result-rank {
+    margin-right: 0;
+  }
+
+  .indie500-song-label {
+    padding: 12px;
+  }
+
+  .indie500-submit-btn {
+    width: 100%;
+  }
+}
+
+/* Hidden class for filtering */
+.indie500-hidden {
+  display: none !important;
+}
+
+/* --- Final List (Hitlist) Modern Styles --- */
+.indie500-final-list-section {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  padding: 24px 12px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,159,227,0.08);
+}
+.indie500-final-list-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.indie500-final-list-header h2 {
+  color: #009fe3;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.indie500-final-list-header p {
+  color: #4b5563;
+  font-size: 1.1rem;
+}
+.indie500-final-list-table-wrapper {
+  overflow-x: auto;
+}
+.indie500-final-list-table {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+}
+.indie500-final-list-header-row {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #009fe3;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.08rem;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 2px 8px rgba(0,159,227,0.10);
+}
+.indie500-final-list-col {
+  padding: 14px 10px;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.indie500-final-list-rank-col { width: 60px; justify-content: center; }
+.indie500-final-list-artist-col { flex: 1 1 160px; }
+.indie500-final-list-title-col { flex: 2 1 220px; }
+.indie500-final-list-link-col { width: 140px; justify-content: flex-end; }
+
+.indie500-final-list-row {
+  display: flex;
+  align-items: center;
+  font-size: 1.08rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.indie500-final-list-row-even { background: #f9fafb; }
+.indie500-final-list-row-odd { background: #f3f4f6; }
+.indie500-final-list-row:hover {
+  background: #e0f2fe;
+  box-shadow: 0 2px 8px rgba(0,159,227,0.10);
+}
+.indie500-final-list-top10 {
+  background: linear-gradient(90deg, #fffbe7 0%, #e0f2fe 100%) !important;
+  border-left: 4px solid #009fe3;
+}
+.indie500-final-list-top5 {
+  background: linear-gradient(90deg, #fffbe7 0%, #ffe082 100%) !important;
+  border-left: 4px solid gold;
+}
+.indie500-final-list-rank {
+  font-weight: 700;
+  font-size: 1.2em;
+  color: #009fe3;
+}
+.indie500-final-list-artist {
+  font-weight: 500;
+  color: #009fe3;
+  margin-right: 6px;
+}
+.indie500-final-list-title {
+  font-weight: 600;
+  color: #111827;
+}
+.indie500-final-list-listen-btn {
+  background: #009fe3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 0.98em;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 1px 4px rgba(0,159,227,0.08);
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+  margin-left: 8px;
+  display: inline-block;
+}
+.indie500-final-list-listen-btn:hover,
+.indie500-final-list-listen-btn:focus {
+  background: #007bbd;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,159,227,0.16);
+  outline: none;
+}
+.indie500-final-list-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 28px 0 0 0;
+}
+.indie500-final-list-page-btn {
+  background: #f3f4f6;
+  color: #009fe3;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.indie500-final-list-page-btn.active,
+.indie500-final-list-page-btn:hover,
+.indie500-final-list-page-btn:focus {
+  background: #009fe3;
+  color: #fff;
+  outline: none;
+}
+@media (max-width: 700px) {
+  .indie500-final-list-header h2 { font-size: 1.3rem; }
+  .indie500-final-list-header p { font-size: 1rem; }
+  .indie500-final-list-table {
+    font-size: 0.98rem;
+  }
+  .indie500-final-list-header-row, .indie500-final-list-row {
+    font-size: 0.98rem;
+  }
+  .indie500-final-list-col { padding: 10px 4px; }
+  .indie500-final-list-link-col { width: 100px; }
+}
+@media (max-width: 500px) {
+  .indie500-final-list-header h2 { font-size: 1.1rem; }
+  .indie500-final-list-header p { font-size: 0.95rem; }
+  .indie500-final-list-table {
+    font-size: 0.93rem;
+  }
+  .indie500-final-list-header-row, .indie500-final-list-row {
+    font-size: 0.93rem;
+    flex-wrap: wrap;
+  }
+  .indie500-final-list-col { padding: 7px 2px; }
+  .indie500-final-list-link-col { width: 80px; }
+}
+
+/* --- Voting Page Modern Styles --- */
+.indie500-voting-page-section {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  padding: 24px 12px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,159,227,0.08);
+}
+.indie500-voting-page-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.indie500-voting-page-header h2 {
+  color: #009fe3;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.indie500-voting-page-header p {
+  color: #4b5563;
+  font-size: 1.1rem;
+}
+.indie500-voting-list {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+}
+.indie500-voting-list-header-row {
+  display: flex;
+  background: #009fe3;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.08rem;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 2px 8px rgba(0,159,227,0.10);
+}
+.indie500-voting-list-col {
+  padding: 14px 10px;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.indie500-voting-rank-col { width: 60px; justify-content: center; }
+.indie500-voting-artist-col { flex: 1 1 160px; }
+.indie500-voting-title-col { flex: 2 1 220px; }
+.indie500-voting-checkbox-col { width: 60px; justify-content: center; }
+
+.indie500-voting-list-row {
+  display: flex;
+  align-items: center;
+  font-size: 1.08rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.indie500-voting-list-row-even { background: #f9fafb; }
+.indie500-voting-list-row-odd { background: #f3f4f6; }
+.indie500-voting-list-row:hover {
+  background: #e0f2fe;
+  box-shadow: 0 2px 8px rgba(0,159,227,0.10);
+}
+.indie500-voting-list-top10 {
+  background: linear-gradient(90deg, #fffbe7 0%, #e0f2fe 100%) !important;
+  border-left: 4px solid #009fe3;
+}
+.indie500-voting-checkbox {
+  width: 22px;
+  height: 22px;
+  accent-color: #009fe3;
+}
+.indie500-voting-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  margin: 18px 0 0 0;
+  font-size: 1.1em;
+}
+.indie500-voting-submit-btn {
+  background: #009fe3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 28px;
+  font-size: 1em;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0,159,227,0.08);
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+  margin-left: 8px;
+  display: inline-block;
+  cursor: pointer;
+}
+.indie500-voting-submit-btn:disabled {
+  background: #b6dfff;
+  color: #fff;
+  cursor: not-allowed;
+}
+.indie500-voting-submit-btn:hover:not(:disabled),
+.indie500-voting-submit-btn:focus:not(:disabled) {
+  background: #007bbd;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,159,227,0.16);
+  outline: none;
+}
+.indie500-voting-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 18px 0 0 0;
+}
+.indie500-voting-page-btn {
+  background: #f3f4f6;
+  color: #009fe3;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.indie500-voting-page-btn.active,
+.indie500-voting-page-btn:hover,
+.indie500-voting-page-btn:focus {
+  background: #009fe3;
+  color: #fff;
+  outline: none;
+}
+@media (max-width: 700px) {
+  .indie500-voting-page-header h2 { font-size: 1.3rem; }
+  .indie500-voting-page-header p { font-size: 1rem; }
+  .indie500-voting-list {
+    font-size: 0.98rem;
+  }
+  .indie500-voting-list-header-row, .indie500-voting-list-row {
+    font-size: 0.98rem;
+  }
+  .indie500-voting-list-col { padding: 10px 4px; }
+  .indie500-voting-checkbox-col { width: 40px; }
+}
+@media (max-width: 500px) {
+  .indie500-voting-page-header h2 { font-size: 1.1rem; }
+  .indie500-voting-page-header p { font-size: 0.95rem; }
+  .indie500-voting-list {
+    font-size: 0.93rem;
+  }
+  .indie500-voting-list-header-row, .indie500-voting-list-row {
+    font-size: 0.93rem;
+    flex-wrap: wrap;
+  }
+  .indie500-voting-list-col { padding: 7px 2px; }
+  .indie500-voting-checkbox-col { width: 30px; }
+}
+
+/* --- Register & Login Modern Styles --- */
+.indie500-auth-section {
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  padding: 24px 12px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,159,227,0.08);
+}
+.indie500-auth-forms {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.indie500-auth-form {
+  flex: 1 1 280px;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0,159,227,0.06);
+  padding: 28px 18px 22px 18px;
+  margin: 12px 0;
+  min-width: 260px;
+}
+.indie500-auth-form h2 {
+  color: #009fe3;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.indie500-auth-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.indie500-auth-form input[type="text"],
+.indie500-auth-form input[type="email"],
+.indie500-auth-form input[type="password"] {
+  padding: 12px 10px;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 1em;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.indie500-auth-form input:focus {
+  border-color: #009fe3;
+  box-shadow: 0 0 0 2px #bae6fd;
+  outline: none;
+}
+.indie500-auth-btn {
+  background: #009fe3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  font-size: 1.08em;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0,159,227,0.08);
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.indie500-auth-btn:hover,
+.indie500-auth-btn:focus {
+  background: #007bbd;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,159,227,0.16);
+  outline: none;
+}
+.indie500-auth-loggedin {
+  text-align: center;
+  padding: 32px 10px;
+}
+.indie500-auth-loggedin h2 {
+  color: #009fe3;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+@media (max-width: 700px) {
+  .indie500-auth-forms {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .indie500-auth-form {
+    min-width: 0;
+    padding: 18px 6px 14px 6px;
+  }
+}
